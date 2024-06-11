@@ -7,38 +7,34 @@ import "./IRCNftHubL2.sol";
 import "./IRCOrderbook.sol";
 
 interface IRCFactory {
-    function nfthub() external returns (IRCNftHubL2);
+  function nfthub() external returns (IRCNftHubL2);
 
-    function treasury() external returns (IRCTreasury);
+  function treasury() external returns (IRCTreasury);
 
-    function orderbook() external returns (IRCOrderbook);
+  function orderbook() external returns (IRCOrderbook);
 
-    function getPotDistribution() external returns (uint256[5] memory);
+  function getPotDistribution() external returns (uint256[5] memory);
 
-    function minimumPriceIncreasePercent() external returns (uint256);
+  function minimumPriceIncreasePercent() external returns (uint256);
 
-    function trapIfUnapproved() external returns (bool);
+  function trapIfUnapproved() external returns (bool);
 
-    function isMarketApproved(address) external returns (bool);
+  function isMarketApproved(address) external returns (bool);
 
-    function maxRentIterations() external returns (uint256);
+  function maxRentIterations() external returns (uint256);
 
-    function setminimumPriceIncreasePercent(uint256 _percentIncrease) external;
+  function setminimumPriceIncreasePercent(uint256 _percentIncrease) external;
 
-    function setNFTMintingLimit(uint256 _mintLimit) external;
+  function setNFTMintingLimit(uint256 _mintLimit) external;
 
-    function setMaxRentIterations(uint256 _rentLimit) external;
+  function setMaxRentIterations(uint256 _rentLimit) external;
 
-    function getOracleSettings()
-        external
-        view
-        returns (
-            IRealitio realitio,
-            address arbitrator,
-            uint32 timeout
-        );
+  function getOracleSettings()
+    external
+    view
+    returns (IRealitio realitio, address arbitrator, uint32 timeout);
 
-    function owner() external view returns (address);
+  function owner() external view returns (address);
 
-    function isGovernor(address _user) external view returns (bool);
+  function isGovernor(address _user) external view returns (bool);
 }

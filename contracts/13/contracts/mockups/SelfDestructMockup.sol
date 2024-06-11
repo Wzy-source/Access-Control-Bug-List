@@ -6,9 +6,9 @@ import "hardhat/console.sol";
 // to test force sending Ether to Treasury
 
 contract SelfDestructMockup {
-    function killme(address payable _address) public {
-        selfdestruct(_address);
-    }
+  function killme(address payable _address) public {
+    selfdestruct(_address);
+  }
 
-    receive() external payable {}
+  receive() external payable {}
 }
